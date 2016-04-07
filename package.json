@@ -1,0 +1,27 @@
+{
+  "name": "askaldo",
+  "version": "0.0.1",
+  "description": "Ask aldo anything",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexko13/askAldo.git"
+  },
+  "author": "Alex Ko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexko13/askAldo/issues"
+  },
+  "homepage": "https://github.com/alexko13/askAldo#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4"
+  },
+  "devDependencies": {
+    "morgan": "^1.7.0"
+  }
+}
