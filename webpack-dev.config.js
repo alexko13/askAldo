@@ -1,23 +1,19 @@
 const webpack = require('webpack');
 
 module.exports = {
+  devtool: 'eval-source-map',
   entry: [
+    'webpack-hot-middleware/client',
     './client/index',
   ],
   output: {
-    path: `./dist`,
+    path: `${__dirname}dist`,
     filename: 'bundle.js',
     publicPath: '/static/',
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.DedupePlugin(), // Can crash so it may not be needed
-    new webpack.optimize.UglifyJsPlugin({
-      minimize: true,
-      compress: {
-        warnings: false
-      }
-    }),
+    new webpack.HotModuleReplacementPlugin(),
   ],
   resolve: {
     extensions: ['', '.js', '.jsx']
