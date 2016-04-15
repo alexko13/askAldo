@@ -19,7 +19,7 @@ const middleware = (app, express) => {
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use('/static', express.static(`${__dirname}/../../dist`));
 
-  app.get('/', (req, res) => {
+  app.get('*', (req, res) => {
     res.sendFile(path.resolve(`${__dirname}/../../index.html`));
   });
 };
