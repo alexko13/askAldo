@@ -14,6 +14,9 @@ module.exports = {
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('development'),
+    }),
   ],
   resolve: {
     extensions: ['', '.js', '.jsx']
@@ -22,12 +25,7 @@ module.exports = {
     loaders: [{
       test: /\.jsx$/,
       exclude: /node_modules/,
-      loader: 'babel-loader'
-    },
-    {
-      test: /\.scss?$/,
-      loader: 'style!css!sass',
-      include: `${__dirname}css`
+      loader: 'babel'
     }]
   }
 }

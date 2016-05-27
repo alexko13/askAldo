@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import QuestionForm from '../components/QuestionForm';
+
 
 class AskAldo extends Component {
   render () {
     return (
-      <h1>
-        askAldo
-      </h1>
+      <div>
+        Hello world!
+      </div>
     )
   }
 }
