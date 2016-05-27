@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import App from '../containers/App';
-import AskAldo from '../containers/AskAldo';
+import AskAldo from '../containers/AskAldo'
 
 const routes = (
   <Router history={ browserHistory }>

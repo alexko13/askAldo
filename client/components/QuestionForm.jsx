@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 
 const QuestionForm = (props) => {
   return (
-    <div>
-      <input />
-      <pre>
-        { JSON.stringify(props) }
-      </pre>
-    </div>
+    <form onSubmit={props.onQuestionSubmit} >
+      <input
+        onChange={props.onQuestionChange}
+        value={props.question}
+      />
+      <button onClick={props.onQuestionSubmit}>
+        askAldo
+      </button>
+    </form>
   )
 }
 

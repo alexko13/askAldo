@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import QuestionForm from '../components/QuestionForm';
+import QuestionContainer from './QuestionContainer';
 
 
 class AskAldo extends Component {
   render () {
     return (
       <div>
-        Hello world!
+        <QuestionContainer />
       </div>
     )
   }
