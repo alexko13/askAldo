@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const db = process.env.MONGOLAB_URI || 'mongodb://localhost/askaldo';
+const db = process.env.MONGODB_URI || 'mongodb://localhost/askaldo';
 
 // Use native promises
 mongoose.Promise = global.Promise;
