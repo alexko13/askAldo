@@ -4,7 +4,6 @@ const Question = (props) => {
   return (
     <div>
       <p>Q: {props.text}</p>
-      <p>A: {props.answer}</p>
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AskForm from '../components/AskForm';
 import QuestionFeed from '../components/QuestionFeed';
+import questionHelpers from '../util/questionHelpers';
 
 class AskAldo extends Component {
   constructor() {
@@ -13,14 +14,27 @@ class AskAldo extends Component {
     }
   }
 
+  componentDidMount() {
+    // Testing
+    questionHelpers.getQuestions((data) => {
+      this.setState({
+        questions: data
+      })
+    });
+  }
+
   onAskSubmit(e) {
     e.preventDefault();
-    this.setState({
-      questions: this.state.questions.concat([{
-        text: this.state.ask,
-        date: Date.now(),
-      }])
-    })
+
+    // Testing
+    questionHelpers.postQuestion(this.state.ask, (data) => {
+      console.log('asdfasdf')
+      this.setState({
+        questions: this.state.questions.concat([data]),
+        ask: '',
+      })
+    });
+
   }
 
   onAskChange(e) {
@@ -39,7 +53,6 @@ class AskAldo extends Component {
         />
         <QuestionFeed
           questions={this.state.questions}
-          orderBy="date"
         />
       </div>
     )

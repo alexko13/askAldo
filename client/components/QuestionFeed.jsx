@@ -3,7 +3,7 @@ import Question from './Question'
 
 const QuestionFeed = (props) => {
   const questionComponents = props.questions.sort((a, b) => {
-    return a[props.orderBy] < b[props.orderBy];
+    return a < b;
   }).map((question) => {
     return (
       <Question

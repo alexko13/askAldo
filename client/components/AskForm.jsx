@@ -6,10 +6,9 @@ const AskForm = (props) => {
       <input
         onChange={props.onAskChange}
         value={props.ask}
+        required
       />
-    <button onClick={props.onAskSubmit}>
-        askAldo
-      </button>
+    <input type="submit" value="askAldo" />
     </form>
   )
 }
