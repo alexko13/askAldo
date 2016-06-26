@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 const AskForm = (props) => {
   return (
@@ -19,4 +19,4 @@ AskForm.propTypes = {
   ask: React.PropTypes.string,
 }
 
-export default AskForm;
+export default AskForm

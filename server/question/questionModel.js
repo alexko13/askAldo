@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 const QuestionSchema = new mongoose.Schema({
   text: {
@@ -9,6 +9,6 @@ const QuestionSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   }
-});
+})
 
-module.exports = mongoose.model('Question', QuestionSchema);
+module.exports = mongoose.model('Question', QuestionSchema)

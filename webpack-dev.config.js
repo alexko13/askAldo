@@ -1,4 +1,4 @@
-const webpack = require('webpack');
+const webpack = require('webpack')
 
 module.exports = {
   devtool: 'eval-source-map',
@@ -26,6 +26,11 @@ module.exports = {
       test: /\.jsx$/,
       exclude: /node_modules/,
       loader: 'babel'
+    },
+    {
+      test: /\.jsx?$/,
+      loader: 'eslint-loader',
+      exclude: '/node_modules/',
     }]
   }
 }

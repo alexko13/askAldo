@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import AskForm from '../components/AskForm';
-import QuestionFeed from '../components/QuestionFeed';
-import questionHelpers from '../util/questionHelpers';
+import React, { Component } from 'react'
+import AskForm from '../components/AskForm'
+import QuestionFeed from '../components/QuestionFeed'
+import questionHelpers from '../util/questionHelpers'
 
 class AskAldo extends Component {
-  constructor() {
-    super();
-    this.onAskChange = this.onAskChange.bind(this);
-    this.onAskSubmit = this.onAskSubmit.bind(this);
+  constructor(props) {
+    super(props)
+    this.onAskChange = this.onAskChange.bind(this)
+    this.onAskSubmit = this.onAskSubmit.bind(this)
     this.state = {
       ask: '',
       questions: [],
@@ -20,11 +20,11 @@ class AskAldo extends Component {
       this.setState({
         questions: data
       })
-    });
+    })
   }
 
   onAskSubmit(e) {
-    e.preventDefault();
+    e.preventDefault()
 
     // Testing
     questionHelpers.postQuestion(this.state.ask, (data) => {
@@ -33,7 +33,7 @@ class AskAldo extends Component {
         questions: this.state.questions.concat([data]),
         ask: '',
       })
-    });
+    })
 
   }
 
@@ -59,4 +59,4 @@ class AskAldo extends Component {
   }
 }
 
-export default AskAldo;
+export default AskAldo

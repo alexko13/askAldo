@@ -1,14 +1,14 @@
-import axios from 'axios';
+import axios from 'axios'
 
 const questionHelpers = {
   getQuestions: (callback) => {
     axios.get('/api/question')
     .then((res) => {
-      callback(res.data);
+      callback(res.data)
     })
     .catch((res) => {
-      console.log(res);
-    });
+      console.log(res)
+    })
   },
 
   postQuestion: (question, callback) => {
@@ -16,12 +16,12 @@ const questionHelpers = {
       text: question
     })
     .then((res) => {
-      callback(res.data);
+      callback(res.data)
     })
     .catch((res) => {
-      console.log(res);
+      console.log(res)
     })
   }
 }
 
-export default questionHelpers;
+export default questionHelpers

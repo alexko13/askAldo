@@ -1,7 +1,9 @@
-import React from 'react';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router';
-import App from '../containers/App';
+import React from 'react'
+import { Router, Route, browserHistory, IndexRoute } from 'react-router'
+import App from '../containers/App'
 import AskAldo from '../containers/AskAldo'
+
+import QuestionFeed from '../components/QuestionFeed'
 
 const routes = (
   <Router history={ browserHistory }>
@@ -9,6 +11,6 @@ const routes = (
       <IndexRoute component={ AskAldo } />
     </Route>
   </Router>
-);
+)
 
-export default routes;
+export default routes

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 const Question = (props) => {
   return (
@@ -17,4 +17,4 @@ Question.defaultProps = {
 
 }
 
-export default Question;
+export default Question
