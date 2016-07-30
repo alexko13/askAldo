@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux'
-import QuestionReducer from './QuestionReducer'
-import ActiveQuestionReducer from './ActiveQuestionReducer'
+import { reducer as formReducer } from 'redux-form'
+import questionsReducer from './questionsReducer'
+import activeQuestionReducer from './activeQuestionReducer'
 
 const rootReducer = combineReducers({
-  questions: QuestionReducer,
-  activeQuestion: ActiveQuestionReducer
+  form: formReducer,
+  questions: questionsReducer,
+  activeQuestion: activeQuestionReducer,
 })
 
 export default rootReducer

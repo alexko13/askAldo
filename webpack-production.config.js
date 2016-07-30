@@ -10,26 +10,26 @@ module.exports = {
     publicPath: '/static/',
   },
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.DedupePlugin(), // Can crash so it may not be needed
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.DedupePlugin(), // Can crash so it may not be needed
     new webpack.optimize.UglifyJsPlugin({
       minimize: true,
       compress: {
-        warnings: false
-      }
+        warnings: false,
+      },
     }),
   ],
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx'],
   },
   module: {
     loaders: [{
       test: /\.jsx$/,
       exclude: /node_modules/,
-      loader: 'babel'
-    }]
-  }
+      loader: 'babel',
+    }],
+  },
 }

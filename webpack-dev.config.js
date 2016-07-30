@@ -1,7 +1,7 @@
 const webpack = require('webpack')
 
 module.exports = {
-  devtool: 'eval-source-map',
+  devtool: 'source-map',
   entry: [
     'webpack-hot-middleware/client',
     './client/index',
@@ -19,18 +19,18 @@ module.exports = {
     }),
   ],
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx'],
   },
   module: {
     loaders: [{
       test: /\.jsx$/,
       exclude: /node_modules/,
-      loader: 'babel'
+      loader: 'babel',
     },
     {
       test: /\.jsx?$/,
       loader: 'eslint-loader',
       exclude: '/node_modules/',
-    }]
-  }
+    }],
+  },
 }

@@ -3,22 +3,22 @@ import { connect } from 'react-redux'
 
 class QuestionDetail extends Component {
   render() {
-    if(!this.props.question) {
+    if(!this.props.activeQuestion) {
       return (
         <h3>Select a question</h3>
       )
     }
 
     return (
-      <h3>SELECTED: {this.props.question.text}</h3>
+      <h3>Selected: {this.props.activeQuestion.text}</h3>
     )
   }
 }
 
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ activeQuestion }) => {
   return {
-    question: state.activeQuestion
+    activeQuestion,
   }
 }
 

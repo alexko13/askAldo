@@ -1,20 +1,18 @@
 import React, { Component } from 'react'
-// import Question from './Question'
 import { connect } from 'react-redux'
-import { selectQuestion } from '../actions'
 import { bindActionCreators } from 'redux'
+import { selectQuestion, fetchQuestions } from '../actions'
 
-// THIS IS NOW A CONTAINER
 class QuestionFeed extends Component {
+  componentWillMount () {
+    this.props.fetchQuestions()
+  }
+
   render() {
-    const questionComponents = this.props.questions.sort((a, b) => {
-      return a < b
-    }).map((question) => {
+    const questionComponents = this.props.questions.map((question) => {
       return (
-        <p
-          onClick={() => this.props.selectQuestion(question)}
-          key={question.id}>
-          {question.text}
+        <p key={ question._id } onClick={() => this.props.selectQuestion(question)}>
+          { question.text }
         </p>
       )
     })
@@ -27,26 +25,16 @@ class QuestionFeed extends Component {
   }
 }
 
-QuestionFeed.propTypes = {
-  questions: React.PropTypes.array.isRequired,
-}
-
-QuestionFeed.defaultProps = {
-
-}
-
-// returned will be part of components props
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ questions }) => {
   return {
-    questions: state.questions
+    questions,
   }
 }
 
-// returned will be part of components props
 const mapDispatchToProps = (dispatch) => {
-  // when selectQuestion is called, the result is passed to all reducers
   return bindActionCreators({
-    selectQuestion: selectQuestion
+    selectQuestion,
+    fetchQuestions,
   }, dispatch)
 }
 
